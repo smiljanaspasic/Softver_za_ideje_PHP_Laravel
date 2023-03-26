@@ -17,7 +17,11 @@ class SuggestionController extends Controller
     {
         return view('new_idea');
     }
-
+    
+    public function getUserType() {
+        
+        
+    }
     /**
      * Show the form for creating a new resource.
      *
