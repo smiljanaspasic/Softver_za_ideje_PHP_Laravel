@@ -9,13 +9,17 @@ class Suggestion extends Model
 {   
     use HasFactory;
     
-     protected $fillable = [
+    protected $table='suggestions';
+    protected $primaryKey='id';
+    protected $returnType = 'objet';
+            
+    protected $fillable = [
         'user_id',
         'title',
         'description',
         'status',
     ];
      
-      public $timestamps = false;
-      
+      public $timestamps = true;
+    
 }
