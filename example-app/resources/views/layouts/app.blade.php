@@ -33,14 +33,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                       @if (Route::has('new_idea') || Route::has('my_ideas'))
+                       @if (('new_idea' == Route::currentRouteName()) || ('my_ideas' == Route::currentRouteName()) )
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('new_idea') }}">{{ __('Dodaj novi predlog') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('my_ideas') }}">{{ __('Pregled svih mojih predloga') }}</a>
                                 </li>
-                            @endif
+                         @endif
+                         
+                         @if ('home' == Route::currentRouteName())
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Pregled svih predloga') }}</a>
+                                </li>
+                         @endif
+                            
                     </ul>
 
                     <!-- Right Side Of Navbar -->

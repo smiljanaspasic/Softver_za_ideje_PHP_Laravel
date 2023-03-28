@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data=DB::table('suggestions')->get();
+        return view('home',['data'=>$data]);
+    }
+    
+    public function accept(Request $req) {
+        $id=$req->id;
+        DB::table('suggestions')->where('id',$id)->update(['status' => "prihvacen"]);
+
+        $data=DB::table('suggestions')->get();
+        return view('home',['data'=>$data]);
+    }
+    
+     public function partly(Request $req) {
+        $id=$req->id;
+        DB::table('suggestions')->where('id',$id)->update(['status' => "delimicno prihvacen"]);
+
+        $data=DB::table('suggestions')->get();
+        return view('home',['data'=>$data]);
+    }
+    
+    public function cancel(Request $req) {
+        $id=$req->id;
+        DB::table('suggestions')->where('id',$id)->update(['status' => "odbijen"]);
+
+        $data=DB::table('suggestions')->get();
+        return view('home',['data'=>$data]);
     }
 }

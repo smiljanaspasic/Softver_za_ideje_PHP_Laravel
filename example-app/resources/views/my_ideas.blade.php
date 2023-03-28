@@ -34,10 +34,10 @@
                                         <div class="col-md-12">{{$suggestion->status}}</div>
                                     </td>
                             </tr>
-                            
+                             
+                             
                         </table>
-                        
-               
+                       
                     </div>
                 </div>
             </div>
