@@ -26,3 +26,4 @@ Route::get('/my_ideas',[App\Http\Controllers\SuggestionController::class,'show']
 Route::get('/home-accept/{id}',[App\Http\Controllers\HomeController::class,'accept'])->name('home.accept');
 Route::get('/home-partly/{id}',[App\Http\Controllers\HomeController::class,'partly'])->name('home.partly');
 Route::get('/home-cancel/{id}',[App\Http\Controllers\HomeController::class,'cancel'])->name('home.cancel');
+Route::post('home-search',[App\Http\Controllers\HomeController::class,'search'])->name('home.search');

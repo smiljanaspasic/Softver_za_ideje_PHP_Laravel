@@ -40,11 +40,36 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('my_ideas') }}">{{ __('Pregled svih mojih predloga') }}</a>
                                 </li>
+                                <li class='nav-item'>
+                                    <form method="post" action="{{route('home.search')}}">
+                                    @csrf 
+                                    <div class="input-group ps-5">
+                                        <div id="navbar-search-autocomplete" class="form-outline">
+                                        <input type="search" id="form1" class="form-control" name='pretraga'/>
+                                        </div>
+                                        <button class="btn btn-primary">Pretraga</button>
+                                        
+                                             </div>
+                                    </form>
+                                </li>
                          @endif
                          
-                         @if ('home' == Route::currentRouteName())
+                         @if ('home' == Route::currentRouteName() )
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('home') }}">{{ __('Pregled svih predloga') }}</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <form method="post" action="{{route('home.search')}}">
+                                    @csrf 
+                                    <div class="input-group ps-5">
+                                        <div id="navbar-search-autocomplete" class="form-outline">
+                                        <input type="search" id="form1" class="form-control" name='pretraga'/>
+                                        </div>
+                                        <button class="btn btn-primary">Pretraga</button>
+                                        
+                                             </div>
+                                    </form>
+      
                                 </li>
                          @endif
                             

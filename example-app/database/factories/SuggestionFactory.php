@@ -18,6 +18,8 @@ class SuggestionFactory extends Factory
             'title' => $this->faker->title(),
             'description' => $this->faker->text(),
             'status' => $this->faker->word(),
+            'commented' => $this->faker->boolean,
+            'comment' => $this->faker->text()
             
             //
         ];

@@ -18,6 +18,8 @@ class Suggestion extends Model
         'title',
         'description',
         'status',
+        'commented',
+        'comment'
     ];
      
       public $timestamps = true;

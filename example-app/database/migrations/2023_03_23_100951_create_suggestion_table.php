@@ -20,6 +20,8 @@ class CreateSuggestionTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('status');
+            $table->boolean('commented');
+            $table->string('comment');
             $table->timestamps();
         });
     }

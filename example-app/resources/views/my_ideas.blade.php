@@ -14,24 +14,12 @@
                         @csrf
                         <table class="table">
                             <tr>
-                                 
-                                <td >
-                                  
-                                    <div class="col-md-12">    {{$suggestion->description}} </div>
-                                    
-                                    </td>
-                                    
+                                <th scope="row">Predlog:</th>
+                                <td>{{$suggestion->description}}</td>
                             </tr>
-                             
                             <tr>
-                               
-                                 <td>
-                                    
-                                     <div class='col-md-4'> Status predloga:   </div>      
-                                     
-                                    </td>
-                                    <td>
-                                        <div class="col-md-12">{{$suggestion->status}}</div>
+                                <th scope="row">Status predloga:</th>
+                                <td>{{$suggestion->status}}</td>
                                     </td>
                             </tr>
                              

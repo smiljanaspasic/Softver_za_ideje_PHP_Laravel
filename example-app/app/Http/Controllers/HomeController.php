@@ -33,7 +33,7 @@ class HomeController extends Controller
         DB::table('suggestions')->where('id',$id)->update(['status' => "prihvacen"]);
 
         $data=DB::table('suggestions')->get();
-        return view('home',['data'=>$data]);
+       return redirect()->route('home');
     }
     
      public function partly(Request $req) {
@@ -41,7 +41,7 @@ class HomeController extends Controller
         DB::table('suggestions')->where('id',$id)->update(['status' => "delimicno prihvacen"]);
 
         $data=DB::table('suggestions')->get();
-        return view('home',['data'=>$data]);
+        return redirect()->route('home');
     }
     
     public function cancel(Request $req) {
@@ -49,6 +49,12 @@ class HomeController extends Controller
         DB::table('suggestions')->where('id',$id)->update(['status' => "odbijen"]);
 
         $data=DB::table('suggestions')->get();
+       return redirect()->route('home');
+    }
+    
+    public function search(Request $request) {
+        $search=$request->pretraga;
+        $data=DB::table('suggestions')->where('title', 'LIKE', '%'.$search.'%')->orWhere('description', 'LIKE', '%'.$search.'%')->get();
         return view('home',['data'=>$data]);
     }
 }

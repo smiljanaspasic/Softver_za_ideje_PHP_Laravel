@@ -13,30 +13,18 @@
                    
                         @csrf
                         <table class="table">
-                            <tr>
-                                 
-                                <td class="col-md-12">
-                                  
-                                        {{$suggestion->description}} </div
-                                    
-                                    </td>
-                                    
-                            </tr>
-                             
-                            <tr>
-                               
-                                 <td id='statustd'>
-                                    
-                                     Status predloga:      
-                                     
-                                 </td>
-                                 <td id='statustd'>
-                                       {{$suggestion->status}} 
-                                 </td>
-                            </tr>
-                             
                              <tr>
-                                 <td class='col-md-12'>
+                                <th scope="row">Predlog:</th>
+                                <td>{{$suggestion->description}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Status predloga:</th>
+                                <td>{{$suggestion->status}}</td>
+                                    </td>
+                            </tr>
+                             <tr>
+                                 <th scope="row"></th>
+                                 <td >
                              <center>
                                  <button class="btn btn-success" action=''><a class="btn btn-success" href="{{route('home.accept',$suggestion->id)}}">Odobri</a></button>
                                       <button class="btn btn-primary"><a class="btn btn-primary"href="{{route('home.partly',$suggestion->id)}}">Delimicno moguce odobravanje</a></button>
@@ -44,7 +32,23 @@
                               </center>
                                  </td>
                              </tr>
-                             
+                             <tr>
+                               <th scope="row">Direktorov komentar:</th>        
+                                                  
+               <td>
+              <div class="form-outline w-100">
+                @if($suggestion->comented)
+                <textarea class="form-control" id="textAreaExample" rows="4"
+                  style="background: #fff;"></textarea>
+                  <br></br>
+                  <center>  <button class="btn btn-info">Dodaj komentar</button> </center>
+                  @endif
+              </div>
+                   </td>
+                 
+            
+          
+                             </tr>
                         </table>
                        
                     </div>
