@@ -78,6 +78,8 @@ class HomeController extends Controller
             case "declined":
                 $data=$base->where('status','odbijeno');
                  break;
+            case "waiting":
+                $data=$base->where('status','na cekanju');
              }
              
         return view('home',['data'=>$data]);
@@ -96,6 +98,11 @@ class HomeController extends Controller
         return $namesurname;
     }
     
+     public function getSector($id) {
+        $name=DB::table('users')->where('id',$id)->value('sektor');
+        return $name;
+    }
+    
     public function accept(Request $request) {
         $data=DB::table('suggestions')->where('status','odobreno')->get();
         $request->session()->put('status','accept');
@@ -107,10 +114,16 @@ class HomeController extends Controller
         $request->session()->put('status','partly');
         return view('home',['data'=>$data]);
     }
-    
+   
     public function decline(Request $request) {
         $data=DB::table('suggestions')->where('status','odbijeno')->get();
         $request->session()->put('status','declined');
+        return view('home',['data'=>$data]);
+    }
+    
+    public function wait(Request $request) {
+        $data=DB::table('suggestions')->where('status','na cekanju')->get();
+        $request->session()->put('status','waiting');
         return view('home',['data'=>$data]);
     }
 }

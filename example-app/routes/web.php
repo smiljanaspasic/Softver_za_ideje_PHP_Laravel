@@ -29,3 +29,4 @@ Route::post('/searchuser',[App\Http\Controllers\HomeController::class,'searchuse
 Route::get('/accept',[App\Http\Controllers\HomeController::class, 'accept'])->name('accept');
 Route::get('/partly',[App\Http\Controllers\HomeController::class, 'partly'])->name('partly');
 Route::get('/decline',[App\Http\Controllers\HomeController::class, 'decline'])->name('decline');
+Route::get('/wait',[App\Http\Controllers\HomeController::class, 'wait'])->name('wait');

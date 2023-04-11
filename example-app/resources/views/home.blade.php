@@ -25,7 +25,13 @@
                                 <tr>
 
                                     <th scope="row">Korisnik koji je predlozio:</th>
-                                    <td>{{App\Http\Controllers\HomeController::getUser($suggestion->id)}}</td>
+                                    <td>{{App\Http\Controllers\HomeController::getUser($suggestion->user_id)}}</td>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <th scope="row">Sektor korisnika:</th>
+                                    <td>{{App\Http\Controllers\HomeController::getSector($suggestion->user_id)}}</td>
                                     </td>
                                 </tr>
                                 <tr>

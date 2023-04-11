@@ -27,7 +27,7 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand">
                     <img src="https://yt3.googleusercontent.com/ytc/AL5GRJUj_8cTsZ_YhsvVez2e1_9vFPaFULQ3dKP1qtY=s900-c-k-c0x00ffffff-no-rj" alt="SLIKA"/ height="100px" width="100px">
 
                 </a>
@@ -59,7 +59,8 @@
                         </li>
                         @endif
 
-                        @if ('home' == Route::currentRouteName() || ('search' == Route::currentRouteName()) || ('accept' == Route::currentRouteName()) || ('partly' == Route::currentRouteName()) || ('decline' == Route::currentRouteName()) )
+                        @if ('home' == Route::currentRouteName() || ('search' == Route::currentRouteName()) || ('accept' == Route::currentRouteName())
+                        || ('partly' == Route::currentRouteName()) || ('decline' == Route::currentRouteName()) || ('wait' == Route::currentRouteName()) )
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">{{ __('Pregled svih predloga') }}</a>
                         </li>
@@ -72,7 +73,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('decline') }}">{{ __('Pregled svih odbijenih predloga') }}</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('wait') }}">{{ __('Pregled svih predloga na cekanju') }}</a>
+                        </li>
                         <li class='nav-item'>
                             <form method="post" action="{{route('search')}}" >
                               @csrf

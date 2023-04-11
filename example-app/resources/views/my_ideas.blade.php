@@ -22,8 +22,14 @@
                                 <td>{{$suggestion->status}}</td>
                                     </td>
                             </tr>
-                             
-                             
+                             <tr>
+                                <th scope="row">Direktorov komentar:</th>
+                             @if($suggestion->commented)
+                             <td> {{$suggestion->comment}} <td>
+                             @else
+                             <td>Nema komentara</td>
+                             </tr>
+                             @endif
                         </table>
                        
                     </div>
