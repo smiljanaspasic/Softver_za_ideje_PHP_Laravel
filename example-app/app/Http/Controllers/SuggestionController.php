@@ -45,6 +45,8 @@ class SuggestionController extends Controller
         $suggestion->title=$request->title;
         $suggestion->description=$request->description;
         $suggestion->status="na cekanju";
+        $suggestion->commented=false;
+        $suggestion->comment="";
         $suggestion->save();
         
         return redirect('/new_idea');

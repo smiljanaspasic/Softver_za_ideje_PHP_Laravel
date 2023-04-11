@@ -1,7 +1,10 @@
 #statustd {
     width: 50%;
 }
-
+body {
+    background-image: url("https://yt3.googleusercontent.com/ytc/AL5GRJUj_8cTsZ_YhsvVez2e1_9vFPaFULQ3dKP1qtY=s900-c-k-c0x00ffffff-no-rj");
+   
+}
 table {
   margin-top: 50px;
   table-layout: fixed;

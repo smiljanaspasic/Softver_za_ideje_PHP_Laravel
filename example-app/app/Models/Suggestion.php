@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Suggestion extends Model
-{   
+class Suggestion extends Model {
+
     use HasFactory;
-    
-    protected $table='suggestions';
-    protected $primaryKey='id';
+
+    protected $table = 'suggestions';
+    protected $primaryKey = 'id';
     protected $returnType = 'objet';
-            
     protected $fillable = [
         'user_id',
         'title',
@@ -21,7 +20,18 @@ class Suggestion extends Model
         'commented',
         'comment'
     ];
-     
-      public $timestamps = true;
-    
+    public $timestamps = true;
+ 
+   private $current;
+   
+   public function getCurrent() {
+       return $this->current;
+   }
+
+   public function setCurrent($current) {
+       $this->current = $current;
+   }
+
+
+
 }

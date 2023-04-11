@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -23,7 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/new_idea', [App\Http\Controllers\SuggestionController::class, 'index'])->name('new_idea');
 Route::post('/new_idea',[App\Http\Controllers\SuggestionController::class,'store'])->name('store_idea');
 Route::get('/my_ideas',[App\Http\Controllers\SuggestionController::class,'show'])->name('my_ideas');
-Route::get('/home-accept/{id}',[App\Http\Controllers\HomeController::class,'accept'])->name('home.accept');
-Route::get('/home-partly/{id}',[App\Http\Controllers\HomeController::class,'partly'])->name('home.partly');
-Route::get('/home-cancel/{id}',[App\Http\Controllers\HomeController::class,'cancel'])->name('home.cancel');
-Route::post('home-search',[App\Http\Controllers\HomeController::class,'search'])->name('home.search');
+Route::post('/edit/{id}',[App\Http\Controllers\HomeController::class,'edit'])->name('edit');
+Route::post('/search',[App\Http\Controllers\HomeController::class,'search'])->name('search');
+Route::post('/searchuser',[App\Http\Controllers\HomeController::class,'searchuser'])->name('searchuser');
+Route::get('/accept',[App\Http\Controllers\HomeController::class, 'accept'])->name('accept');
+Route::get('/partly',[App\Http\Controllers\HomeController::class, 'partly'])->name('partly');
+Route::get('/decline',[App\Http\Controllers\HomeController::class, 'decline'])->name('decline');
