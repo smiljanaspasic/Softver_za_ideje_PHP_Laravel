@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 
                 <a class="navbar-brand">
-                    <img src="https://yt3.googleusercontent.com/ytc/AL5GRJUj_8cTsZ_YhsvVez2e1_9vFPaFULQ3dKP1qtY=s900-c-k-c0x00ffffff-no-rj" alt="SLIKA"/ height="100px" width="100px">
+                    <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-social-logo.png" alt="SLIKA"/ height="100px" width="100px">
 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
